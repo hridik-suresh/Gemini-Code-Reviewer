@@ -1,14 +1,14 @@
 const express = require("express");
-const aiRoutes = require("./routes/ai.routes")
+const aiRoutes = require("./routes/ai.routes");
 
 const app = express();
 
+app.use(express.json({ limit: "5mb" }));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-
-app.use('/ai', aiRoutes)
+app.use("/ai", aiRoutes);
 
 module.exports = app;
