@@ -24,6 +24,8 @@ function App() {
   const [reviewText, setReviewText] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   // Typewriter effect for AI response
   const animatedReview = useTypewriter(reviewText);
 
@@ -31,7 +33,7 @@ function App() {
     setLoading(true);
     setReviewText(""); // Clear old review
     try {
-      const response = await axios.post("http://localhost:3000/ai/get-review", {
+      const response = await axios.post(`${API_URL}/ai/get-review`, {
         code,
       });
       setReviewText(response.data);
