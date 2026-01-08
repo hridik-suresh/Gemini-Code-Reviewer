@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://gemini-code-reviewer-two.vercel.app/",
+    origin: "https://gemini-code-reviewer-two.vercel.app",
   })
 );
 
